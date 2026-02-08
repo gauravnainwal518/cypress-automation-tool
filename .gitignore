@@ -2,6 +2,8 @@
 node_modules/
 
 # Cypress generated files
+cypress/reports
+
 cypress/videos/
 cypress/screenshots/
 cypress/downloads/

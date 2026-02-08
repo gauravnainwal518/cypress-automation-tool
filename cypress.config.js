@@ -1,13 +1,20 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 6000, //i am overwriting the default value that is 4000 in cypress now its take 6 second for failed any test case 
-  env:{
-   url: "https://rahulshettyacademy.com"
+  defaultCommandTimeout: 6000,
+  reporter: 'cypress-mochawesome-reporter',
+
+  env: {
+    url: "https://rahulshettyacademy.com"
   },
+
+  video: true,
+  screenshotOnRunFailure: true,
+
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
+      return config;
     },
     specPattern: 'cypress/integration/examples/*.js'
   },
