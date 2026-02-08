@@ -5,7 +5,7 @@ describe('My Second Test Suite', function()
  
 it('My FirstTest case',function() {
  
-//Check boxes
+//handling web table example
 cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
  
 cy.get('tr td:nth-child(2)').each(($e1, index, $list) => {
