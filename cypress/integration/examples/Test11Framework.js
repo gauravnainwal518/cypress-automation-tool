@@ -42,7 +42,7 @@ describe("End to End Ecommerce Test", () => {
 
     cy.contains('button', 'Checkout').click()
     cy.get('#country').type('India')
-    cy.wait(8000)
+    
     cy.get('.suggestions ul li a').click()
 
     cy.get('.btn-success').click()
