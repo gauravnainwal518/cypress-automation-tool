@@ -9,7 +9,8 @@ describe("End to End Ecommerce Test", () => {
 
   it("Submit Order", function () {   
     const productName = this.data.productName
-
+    
+   cypress.config('defaultCommandTimeout', 10000) //now this test cas only take 10 second 
     cy.visit("https://rahulshettyacademy.com/loginpagePractise/#")
     cy.get("#username").type(this.data.username)
     cy.get("#password").type(this.data.password)
