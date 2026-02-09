@@ -1,4 +1,25 @@
+
 const { defineConfig } = require("cypress");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const {
+  addCucumberPreprocessorPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor");
+const createEsbuildPlugin = require(
+  "@badeball/cypress-cucumber-preprocessor/esbuild"
+);
+
+async function setupNodeEvents(on, config) {
+  await addCucumberPreprocessorPlugin(on, config);
+
+  on(
+    "file:preprocessor",
+    createBundler({
+      plugins: [createEsbuildPlugin.default(config)],
+    })
+  );
+
+  return config;
+}
 
 module.exports = defineConfig({
   defaultCommandTimeout: 6000,
@@ -18,10 +39,9 @@ module.exports = defineConfig({
   screenshotOnRunFailure: true,
 
   e2e: {
-    setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
-      return config;
-    },
-    specPattern: 'cypress/integration/examples/*.js'
+   //specPattern: 'cypress/integration/examples/*.js'  //this is for normal tests
+   //this is fo cucumber framework
+    specPattern: 'cypress/integration/examples/BDD/*.feature', 
+    setupNodeEvents
   },
 });

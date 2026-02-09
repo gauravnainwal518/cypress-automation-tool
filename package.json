@@ -7,15 +7,17 @@
     "headTest": "npx cypress run --headed",
     "chromeTest": "npx run test --browser chrome",
     "recordDashBoardTest": "npx cypress run --record --key  66145549-7f52-4f9e-b671-a1d49ab9be3c"
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^15.9.0",
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^15.10.0",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^4.0.2"
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "esbuild": "^0.27.3"
   }
 }
