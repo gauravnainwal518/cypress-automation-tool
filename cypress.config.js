@@ -7,6 +7,12 @@ module.exports = defineConfig({
   env: {
     url: "https://rahulshettyacademy.com"
   },
+  //with the help of retries we run failed test cases two times for confirmation its actual reason of failing know more about this from chatgpt
+  retries: {
+    runMode: 1,
+ 
+  },
+  projectId: "ft7946",
 
   video: true,
   screenshotOnRunFailure: true,
