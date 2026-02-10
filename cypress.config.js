@@ -39,9 +39,9 @@ module.exports = defineConfig({
   screenshotOnRunFailure: true,
 
   e2e: {
-   //specPattern: 'cypress/integration/examples/*.js'  //this is for normal tests
+   specPattern: 'cypress/integration/examples/*.js',  //this is for normal tests
    //this is fo cucumber framework
-    specPattern: 'cypress/integration/examples/BDD/*.feature', 
+    //specPattern: 'cypress/integration/examples/BDD/*.feature', 
     setupNodeEvents
   },
 });
