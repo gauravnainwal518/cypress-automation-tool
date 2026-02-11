@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
  
 describe('My First Test Suite', function() 
 {

@@ -24,3 +24,23 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+Cypress.Commands.add("SelectProduct", (productName)=> {
+  cy.get('h4.card-title').each(($el, index, $list) => {
+    if($el.text().includes(productName))
+    {
+cy.get('button.btn.btn-info').eq(index).click()
+    }
+    
+  })
+})
+
+
+Cypress.Commands.add("LoginAPI", ()=> {
+  cy.request("POST","https://rahulshettyacademy.com/api/ecom/auth/login",
+  {"userEmail": "gauravnainwal229@gmail.com", "userPassword": "G@urav123"})
+  .then(function(response)
+{
+  expect(response.status).to.eq(200)
+  Cypress.env('token',response.body.token);
+})
+})

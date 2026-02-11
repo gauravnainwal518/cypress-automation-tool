@@ -19,5 +19,8 @@
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^4.0.2",
     "esbuild": "^0.27.3"
+  },
+  "dependencies": {
+    "neat-csv": "^7.0.0"
   }
 }
